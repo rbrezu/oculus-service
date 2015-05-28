@@ -1,0 +1,20 @@
+{
+  "generator-jhipster": {
+    "baseName": "oculuservice",
+    "packageName": "com.razvan.oculuservice",
+    "packageFolder": "com/razvan/oculuservice",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useCompass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "7",
+    "rememberMeKey": "070a74f7db2859487a2ca2bf9585355d7a3ca273"
+  }
+}

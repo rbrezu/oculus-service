@@ -1,0 +1,32 @@
+# Disable the spring security default configuration from spring-boot-actuator
+management.security.enabled: true
+security.basic.enabled: false
+
+# Disable Jolokia - An http/json bridge for remote JMX access
+endpoints.jolokia.enabled: false
+
+# security configuration (this key should be unique for your application, and kept secret)
+jhipster.security.rememberme.key: 070a74f7db2859487a2ca2bf9585355d7a3ca273
+
+async:
+    corePoolSize: 2
+    maxPoolSize: 50
+    queueCapacity: 10000
+
+mail:
+    host: smtp.gmail.com
+    port: 587
+    username: greenteabagtest@gmail.com
+    password: JasperMaster
+    protocol: smtp
+    tls: true
+    auth: true
+    from: greenteabagtest@gmail.com
+
+swagger:
+    title: oculuservice API
+    description: oculuservice applications and beyond!
+    termsOfServiceUrl: http://jhipster.github.io/
+    contact:
+    license: Apache 2.0
+    licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html
