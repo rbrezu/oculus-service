@@ -42,7 +42,7 @@ public class MailService {
     @Inject
     private SpringTemplateEngine templateEngine;
 
-    /**
+    /**                                       \
      * System default email address that sends the e-mails.
      */
     private String from;

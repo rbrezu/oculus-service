@@ -42,5 +42,5 @@ angular.module('oculuserviceApp')
                         return $translate.refresh();
                     }]
                 }
-            });
+            })
     });

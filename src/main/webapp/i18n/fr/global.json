@@ -8,6 +8,8 @@
                 "main": "Entités",
                 "author": "Author",
                 "book": "Book",
+                "oculusUser": "OculusUser",
+                "oculusEvent": "OculusEvent",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
