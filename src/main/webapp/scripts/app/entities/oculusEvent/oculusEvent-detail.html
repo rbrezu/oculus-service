@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span translate="oculuserviceApp.oculusEvent.detail.title">OculusEvent</span> {{oculusEvent.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusEvent.name">Name</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusEvent.name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusEvent.type">Type</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusEvent.type}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusEvent.location">Location</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusEvent.location}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusEvent.entered_time">Entered_time</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusEvent.entered_time}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusEvent.exit_time">Exit_time</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusEvent.exit_time}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusEvent.duration">Duration</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusEvent.duration}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusEvent.oculusUser">oculusUser</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusEvent.oculusUser.first_name + ' ' + oculusEvent.oculusUser.family_name}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="oculusEvent"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

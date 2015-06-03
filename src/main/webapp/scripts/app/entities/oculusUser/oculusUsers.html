@@ -1,0 +1,207 @@
+<div>
+
+    <h2 translate="oculuserviceApp.oculusUser.home.title">OculusUser</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#saveOculusUserModal" ng-click="clear()">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="oculuserviceApp.oculusUser.home.createLabel">Create a new OculusUser</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="filter">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="saveOculusUserModal" tabindex="-1" role="dialog" aria-labelledby="myOculusUserLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myOculusUserLabel" translate="oculuserviceApp.oculusUser.home.createOrEditLabel">Create or edit a OculusUser</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="oculusUser.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="oculuserviceApp.oculusUser.first_name">First_name</label>
+                            <input type="text" class="form-control" name="first_name"
+                                   ng-model="oculusUser.first_name" required>
+
+                            <div ng-show="editForm.first_name.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.first_name.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="oculuserviceApp.oculusUser.family_name">Family_name</label>
+                            <input type="text" class="form-control" name="family_name"
+                                   ng-model="oculusUser.family_name" required>
+
+                            <div ng-show="editForm.family_name.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.family_name.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="oculuserviceApp.oculusUser.sex">Sex</label>
+                            <input type="text" class="form-control" name="sex"
+                                   ng-model="oculusUser.sex" required ng-pattern="/(M|F)/">
+
+                            <div ng-show="editForm.sex.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.sex.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.sex.$error.pattern" translate="entity.validation.pattern" translate-value-pattern="(M|F)">
+                                    This field should follow pattern "(M|F)".
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="oculuserviceApp.oculusUser.age">Age</label>
+                            <input type="number" class="form-control" name="age"
+                                   ng-model="oculusUser.age" required min="1">
+
+                            <div ng-show="editForm.age.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.age.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.age.$error.min" translate="entity.validation.min" translate-value-min="1">
+                                    This field should be more than 1.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.age.$error.number" translate="entity.validation.number">
+                                    This field should be a number.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="oculuserviceApp.oculusUser.smoking_time">Smoking_time</label>
+                            <input type="number" class="form-control" name="smoking_time"
+                                   ng-model="oculusUser.smoking_time">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="oculuserviceApp.oculusUser.time_since_last_cigarette">Time_since_last_cigarette</label>
+                            <input type="number" class="form-control" name="time_since_last_cigarette"
+                                   ng-model="oculusUser.time_since_last_cigarette">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Form Score</label>
+                            <input type="number" class="form-control" name="form_score"
+                                   ng-model="oculusUser.form_score" readonly>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteOculusUserConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(oculusUser.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="oculuserviceApp.oculusUser.delete.question" translate-values="{id: '{{oculusUser.id}}'}">Are you sure you want to delete this OculusUser?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th ng-click="predicate = 'id'; reverse=!reverse">ID</th>
+                    <th ng-click="predicate = 'first_name'; reverse=!reverse">First Name</th>
+                    <th ng-click="predicate = 'family_name'; reverse=!reverse">Family Name</th>
+                    <th ng-click="predicate = 'sex'; reverse=!reverse">Sex</th>
+                    <th ng-click="predicate = 'age'; reverse=!reverse">Age</th>
+                    <th ng-click="predicate = 'smoking_time'; reverse=!reverse">Smoking Time</th>
+                    <th ng-click="predicate = 'time_since_last_cigarette'; reverse=!reverse">Time Since Last Cigarette</th>
+                    <th ng-click="predicate = 'form_score'; reverse=!reverse">Form Score</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="oculusUser in oculusUsers | filter:filter | orderBy:predicate:reverse">
+                    <td><a ui-sref="oculusUserDetail({id:oculusUser.id})">{{oculusUser.id}}</a></td>
+                    <td>{{oculusUser.first_name}}</td>
+                    <td>{{oculusUser.family_name}}</td>
+                    <td>{{oculusUser.sex}}</td>
+                    <td>{{oculusUser.age}}</td>
+                    <td>{{oculusUser.smoking_time + " years"}}</td>
+                    <td>{{oculusUser.time_since_last_cigarette + " hours"}}</td>
+                    <td>{{oculusUser.form_score}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="oculusUserDetail({id:oculusUser.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="showUpdate(oculusUser.id)"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(oculusUser.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

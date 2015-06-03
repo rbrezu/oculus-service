@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span translate="oculuserviceApp.oculusUser.detail.title">OculusUser</span> {{oculusUser.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusUser.first_name">First_name</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusUser.first_name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusUser.family_name">Family_name</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusUser.family_name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusUser.sex">Sex</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusUser.sex}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusUser.age">Age</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusUser.age}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusUser.smoking_time">Smoking_time</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusUser.smoking_time}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="oculuserviceApp.oculusUser.time_since_last_cigarette">Time_since_last_cigarette</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusUser.time_since_last_cigarette}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Form Score</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{oculusUser.form_score}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="oculusUser"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
