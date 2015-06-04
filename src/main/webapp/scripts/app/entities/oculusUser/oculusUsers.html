@@ -180,8 +180,8 @@
                     <td>{{oculusUser.family_name}}</td>
                     <td>{{oculusUser.sex}}</td>
                     <td>{{oculusUser.age}}</td>
-                    <td>{{oculusUser.smoking_time + " years"}}</td>
-                    <td>{{oculusUser.time_since_last_cigarette + " hours"}}</td>
+                    <td>{{oculusUser.smoking_time == null ? "" : oculusUser.smoking_time + " years"}}</td>
+                    <td>{{oculusUser.time_since_last_cigarette == null ? "" : oculusUser.time_since_last_cigarette + " hours"}}</td>
                     <td>{{oculusUser.form_score}}</td>
                     <td>
                         <button type="submit"

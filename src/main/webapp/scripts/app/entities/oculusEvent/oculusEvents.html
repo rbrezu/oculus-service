@@ -161,8 +161,8 @@
                     <td>{{oculusEvent.location}}</td>
                     <td>{{oculusEvent.entered_time}}</td>
                     <td>{{oculusEvent.exit_time}}</td>
-                    <td>{{oculusEvent.duration + " sec"}}</td>
-                    <td>{{oculusEvent.oculusUser.first_name + " " + oculusEvent.oculusUser.family_name}}</td>
+                    <td>{{oculusEvent.duration == null ? "" : oculusEvent.duration + " sec"}}</td>
+                    <td><a ui-sref="oculusUserDetail({id:oculusEvent.oculusUser.id})">{{oculusEvent.oculusUser.first_name + " " + oculusEvent.oculusUser.family_name}}</a></td>
                     <td>
                         <button type="submit"
                                 ui-sref="oculusEventDetail({id:oculusEvent.id})"
