@@ -1,0 +1,25 @@
+{
+    "oculuserviceApp": {
+        "oculusUser" : {
+            "home": {
+                "title": "OculusUsers",
+                "createLabel": "Créer un nouveau OculusUser",
+                "createOrEditLabel": "Créer ou éditer un OculusUser"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le OculusUser {{ id }} ?"
+            },
+            "detail": {
+                "title": "OculusUser"
+            },
+            "first_name": "First_name",
+            "family_name": "Family_name",
+            "sex": "Sex",
+            "age": "Age",
+            "smoking_time": "Smoking_time",
+            "time_since_last_cigarette": "Time_since_last_cigarette",
+            "oculusEvent": "oculusEvent"
+        }
+    }
+}
+

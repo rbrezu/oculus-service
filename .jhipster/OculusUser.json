@@ -1,0 +1,95 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "oculusEvent",
+            "relationshipNameCapitalized": "OculusEvent",
+            "relationshipFieldName": "oculusEvent",
+            "otherEntityName": "oculusEvent",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "OculusEvent"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "first_name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "First_name",
+            "fieldNameUnderscored": "first_name",
+            "fieldInJavaBeanMethod": "First_name",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "family_name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Family_name",
+            "fieldNameUnderscored": "family_name",
+            "fieldInJavaBeanMethod": "Family_name",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "sex",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Sex",
+            "fieldNameUnderscored": "sex",
+            "fieldInJavaBeanMethod": "Sex",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required",
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "(M|F)"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "age",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "Age",
+            "fieldNameUnderscored": "age",
+            "fieldInJavaBeanMethod": "Age",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": "1"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "smoking_time",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "Smoking_time",
+            "fieldNameUnderscored": "smoking_time",
+            "fieldInJavaBeanMethod": "Smoking_time",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "time_since_last_cigarette",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "Time_since_last_cigarette",
+            "fieldNameUnderscored": "time_since_last_cigarette",
+            "fieldInJavaBeanMethod": "Time_since_last_cigarette",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150528185329",
+    "pagination": "infinite-scroll",
+    "validation": true
+}

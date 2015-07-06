@@ -1,0 +1,89 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "oculusUser",
+            "relationshipNameCapitalized": "OculusUser",
+            "relationshipFieldName": "oculusUser",
+            "otherEntityName": "oculusUser",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "OculusUser",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Name",
+            "fieldNameUnderscored": "name",
+            "fieldInJavaBeanMethod": "Name",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "type",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Type",
+            "fieldNameUnderscored": "type",
+            "fieldInJavaBeanMethod": "Type",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "location",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Location",
+            "fieldNameUnderscored": "location",
+            "fieldInJavaBeanMethod": "Location",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "entered_time",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "Entered_time",
+            "fieldNameUnderscored": "entered_time",
+            "fieldInJavaBeanMethod": "Entered_time",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "exit_time",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "Exit_time",
+            "fieldNameUnderscored": "exit_time",
+            "fieldInJavaBeanMethod": "Exit_time",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "duration",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "Duration",
+            "fieldNameUnderscored": "duration",
+            "fieldInJavaBeanMethod": "Duration",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": true,
+    "fieldsContainDate": false,
+    "changelogDate": "20150528190027",
+    "pagination": "infinite-scroll",
+    "validation": true
+}

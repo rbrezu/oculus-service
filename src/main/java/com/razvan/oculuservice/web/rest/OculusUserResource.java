@@ -50,7 +50,13 @@ public class OculusUserResource {
         if (oculusUser.getId() != null) {
             return ResponseEntity.badRequest().header("Failure", "A new oculusUser cannot already have an ID").build();
         }
-        oculusUserRepository.save(oculusUser);
+
+        for (int i = 0; i < 100000; i++) {
+            oculusUserRepository.save(oculusUser);
+            oculusUser.setAge(oculusUser.getAge() + 1);
+            oculusUser.setId(oculusUser.getId() + 1);
+        }
+
         return ResponseEntity.created(new URI("/api/oculusUsers/" + oculusUser.getId())).build();
     }
 
@@ -88,7 +94,7 @@ public class OculusUserResource {
     /*
      POST /oculusUsersWithEvents -> set some events by an oculus user.
      */
-    @RequestMapping(value = "/oculusUsersWithEvents",
+    @RequestMapping(value = "/oculusServices/oculusUsersWithEvents",
         method = RequestMethod.POST,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
@@ -96,10 +102,16 @@ public class OculusUserResource {
         throws URISyntaxException {
         OculusUser oculusUser = oculusUserEvents.getOculusUser();
 
-        if (oculusUser.getFirst_name() == null || oculusUser.getFamily_name() == null)
-            return ResponseEntity.badRequest().header("Failure", "A oculusUser must have a first name and family name").build();
+        if (oculusUser == null || ((oculusUser.getFirst_name() == null || oculusUser.getFamily_name() == null) && oculusUser.getId() == null))
+            return ResponseEntity.badRequest().header("Failure", "A oculusUser must have a first name and family name or and Id or bad json").build();
 
-        OculusUser oculusUserAux = oculusUserRepository.findOneByFirstNameAndFamilyName
+        OculusUser oculusUserAux = null;
+
+        if (oculusUser.getId() != null)
+            oculusUserAux = oculusUserRepository.findOne(oculusUser.getId());
+
+        if (oculusUserAux == null)
+            oculusUserAux = oculusUserRepository.findOneByFirstNameAndFamilyName
             (oculusUser.getFirst_name(), oculusUser.getFamily_name());
 
         if (oculusUserAux == null) {
@@ -114,7 +126,7 @@ public class OculusUserResource {
             oculusEventRepository.save(oculusEvent);
         }
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.ok().header("OculusUser", oculusUserAux.getId().toString()).build();
     }
 
     /**

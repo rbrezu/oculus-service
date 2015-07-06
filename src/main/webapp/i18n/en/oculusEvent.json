@@ -1,0 +1,24 @@
+{
+    "oculuserviceApp": {
+        "oculusEvent" : {
+            "home": {
+                "title": "OculusEvents",
+                "createLabel": "Create a new OculusEvent",
+                "createOrEditLabel": "Create or edit a OculusEvent"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete OculusEvent {{ id }}?"
+            },
+            "detail": {
+                "title": "OculusEvent"
+            },
+            "name": "Name",
+            "type": "Type",
+            "location": "Location",
+            "entered_time": "Entered_time",
+            "exit_time": "Exit_time",
+            "duration": "Duration",
+            "oculusUser": "oculusUser"
+        }
+    }
+}

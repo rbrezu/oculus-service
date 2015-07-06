@@ -30,12 +30,12 @@ spring:
     datasource:
       driverClassName: oracle.jdbc.OracleDriver
       dataSourceClassName: oracle.jdbc.pool.OracleDataSource
-      url: jdbc:oracle:thin:@//85.122.23.37:1521/xe
-      username: stud3
-      password: Trustno1x
+      url: jdbc:oracle:thin:@//localhost:1521/XE
+      username: OculusService
+      password: trustno1x
 
     jpa:
-      database-platform: org.hibernate.dialect.Oracle10gDialect
+      database-platform: org.hibernate.dialect.OracleDialect
       database: ORACLE
       openInView: false
       show_sql: true

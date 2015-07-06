@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.razvan.oculuservice.domain.OculusEvent;
 import com.razvan.oculuservice.domain.OculusUser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ public class OculusUserEventsDTO {
     private OculusUser oculusUser;
 
     @JsonProperty("oculusEventList")
-    private List<OculusEvent> oculusEventList;
+    private List<OculusEvent> oculusEventList = new ArrayList<>();
 
     @JsonCreator
     public OculusUserEventsDTO() {}
